@@ -19,7 +19,7 @@ class _HomeState extends State<Home> {
     return Stack(
       children: <Widget>[
         Image.asset(
-          "images/praia.jpg",
+          "images/fundo.jpg",
           fit: BoxFit.fill,
           height: 1000.0,
           width: 2000.0,
@@ -34,7 +34,7 @@ class _HomeState extends State<Home> {
                   Padding(
                     padding: EdgeInsets.all(10.0),
                     child: FlatButton(
-                      color: Colors.white,
+                      color: Colors.greenAccent,
                       onPressed: (){
                         debugPrint("+ 1");
                       },
@@ -44,7 +44,7 @@ class _HomeState extends State<Home> {
                   Padding(
                     padding: EdgeInsets.all(10.0),
                     child: FlatButton(
-                      color: Colors.white,
+                      color: Colors.greenAccent,
                       onPressed: (){
                         debugPrint("- 1");
                       },
