@@ -14,6 +14,32 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+  int _people = 0;
+  String _infoText = "Pode entrar";
+
+  void _changePeople(int delta){
+    setState(() {
+      _people += delta;
+
+/*      if(_people <0){
+        _infoText = "Mundo invertido?";
+      } else if(_people >=0){
+        _infoText = "Pode entrar";
+      } else if (_people>10){
+        _infoText = "Está lotado!";
+      }*/
+
+      if(_people>=0 && _people<=10){
+        _infoText = "Pode entrar";
+      } else if(_people>10){
+        _infoText = "Está lotado!";
+      } else{
+        _infoText = "Mundo invertido?";
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -27,7 +53,8 @@ class _HomeState extends State<Home> {
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text("Pessoas: 0", style: TextStyle(fontSize: 35.0, color: Colors.green[900])),
+            Text("Pessoas: $_people",
+                style: TextStyle(fontSize: 35.0, color: Colors.green[900])),
             Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -36,7 +63,7 @@ class _HomeState extends State<Home> {
                     child: FlatButton(
                       color: Colors.greenAccent,
                       onPressed: (){
-                        debugPrint("+ 1");
+                        _changePeople(1);
                       },
                       child: Text("+ 1", style: TextStyle(fontSize: 30.0, color: Colors.green[900]),),
                     ),
@@ -46,14 +73,15 @@ class _HomeState extends State<Home> {
                     child: FlatButton(
                       color: Colors.greenAccent,
                       onPressed: (){
-                        debugPrint("- 1");
+                        _changePeople(-1);
                       },
                       child: Text("- 1", style: TextStyle(fontSize: 30.0, color: Colors.green[900]),),
                     ),
                   ),
                 ],
               ),
-            Text("Pode entrar!", style: TextStyle(fontSize: 35.0, color: Colors.green[900]),),
+            Text(_infoText,
+              style: TextStyle(fontSize: 35.0, color: Colors.green[900]),),
           ],
         ),
       ],
