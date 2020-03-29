@@ -4,18 +4,39 @@ void main(){
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     title: "Contador de Pessoas",
-    home: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+    home: Stack(
       children: <Widget>[
-        Text("Pessoas: 0", style: TextStyle(fontSize: 22.0, color: Colors.amber),),
-        Row(
+        Image.asset(
+          "images/fundo.jpg",
+          fit: BoxFit.cover,
+          height: 1000.0,
+        ),
+        Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text("+1", style: TextStyle(fontSize: 22.0, color: Colors.amber)),
-            Text("-1", style: TextStyle(fontSize: 22.0, color: Colors.amber)),
+            Text("Pessoas: 0", style: TextStyle(fontSize: 35.0, color: Colors.amber),),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: FlatButton(
+                    onPressed: (){},
+                    child: Text("+ 1", style: TextStyle(fontSize: 30.0, color: Colors.amber),),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: FlatButton(
+                    onPressed: (){},
+                    child: Text("- 1", style: TextStyle(fontSize: 30.0, color: Colors.amber),),
+                  ),
+                ),
+              ],
+            ),
+            Text("Pode entrar!", style: TextStyle(fontSize: 35.0, color: Colors.amber),),
           ],
         ),
-        Text("Pode entrar!", style: TextStyle(fontSize: 22.0, color: Colors.amber),),
       ],
     ),
   ));
