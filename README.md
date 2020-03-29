@@ -1,6 +1,6 @@
 # contador_de_pessoas
 
-A new Flutter application.
+Primeira aplicação flutter. Aprendendo o flutter web
 
 ## Getting Started
 
