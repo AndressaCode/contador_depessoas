@@ -30,9 +30,9 @@ class _HomeState extends State<Home> {
         _infoText = "Está lotado!";
       }*/
 
-      if(_people>=0 && _people<=10){
+      if(_people>=0 && _people<=9){
         _infoText = "Pode entrar";
-      } else if(_people>10){
+      } else if(_people>9){
         _infoText = "Está lotado!";
       } else{
         _infoText = "Mundo invertido?";
@@ -53,6 +53,8 @@ class _HomeState extends State<Home> {
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Text("My first flutter app", style: TextStyle(fontSize: 20.0, color: Colors.black, fontStyle: FontStyle.italic),),
+            SizedBox(height: 40.0),
             Text("Pessoas: $_people",
                 style: TextStyle(fontSize: 35.0, color: Colors.green[900])),
             Row(
